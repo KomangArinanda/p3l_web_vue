@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AppHome from '@/components/AppHome'
 import AppLogin from '@/components/AppLogin'
+import AppSignUp from '@/components/AppSignUp'
 import ShowRoomAvailable from '@/components/pages/reservation/ShowRoomAvailable'
 import RoomDetails from '@/components/pages/reservation/RoomDetails'
 import Booking from '@/components/pages/reservation/Booking'
@@ -22,6 +23,11 @@ export default new Router({
       path: '/login',
       name: 'AppLogin',
       component: AppLogin
+    },
+    {
+      path: '/signup',
+      name: 'AppSignUp',
+      component: AppSignUp
     },
     {
       path: '/search',

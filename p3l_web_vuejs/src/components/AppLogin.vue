@@ -4,7 +4,7 @@
       <v-card tile flat color="blue lighten-5">
           <div>
             <v-layout row wrap justify-space-around>
-              <v-flex xs12>
+              <v-flex xs9>
                 <v-card tile flat>
                   <v-card-text class="px-0  text-xs-center"><h2>Login</h2></v-card-text>
                 </v-card>
@@ -42,7 +42,9 @@
           </div>
           <br>
           <div>
-            <v-layout row wrap justify-space-around>
+            <v-layout row wrap>
+              <v-flex xs2>
+              </v-flex>
               <v-flex xs2>
                 <v-card tile flat>
                     <router-link to="/detail/roomTypeName">
@@ -50,10 +52,21 @@
                     </router-link>
                 </v-card>
               </v-flex>
+              <v-flex xs3>
+                <v-card tile flat>
+                    <router-link to="/signup">
+                    <a>Belum Punya Akun?</a>
+                    </router-link>
+                </v-card>
+              </v-flex>
+              <v-flex xs1>
+              </v-flex>
               <v-flex xs2>
                 <v-card tile flat>
                     <v-btn color="blue lighten-1" @click="submit()"><b>Masuk</b></v-btn>
                 </v-card>
+              </v-flex>
+              <v-flex xs2>
               </v-flex>
             </v-layout>
         </div>
