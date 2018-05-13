@@ -1,59 +1,11 @@
 <template>
   <div>
     <v-footer height="auto" fixed>
-      <v-card flat tile>
-        <v-card-title class="teal white--text">
-          <strong class="subheading">Get connected with us on social networks!</strong>
-          <v-spacer></v-spacer>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            icon
-            dark
-            class="mx-3"
-          >
-            <v-icon size="24px">{{ icon }}</v-icon>
-          </v-btn>
-        </v-card-title>
-        <v-card-text class="grey lighten-3">
-          <v-layout>
-            <v-flex
-              v-for="(col, i) in rows"
-              :key="i"
-              md3
-            >
-              <span class="body-2" v-text="col.title.toUpperCase()"></span>
-              <div
-                v-for="(child, i) in col.children"
-                :key="i"
-                v-text="child"
-              ></div>
-            </v-flex>
-            <v-flex md3 layout column>
-              <span class="body-2">CONTACT</span>
-              <div>
-                <v-icon size="18px" class="mr-3">fa fa-home</v-icon>
-                New York, NY 10012, US
-              </div>
-              <div>
-                <v-icon size="18px" class="mr-3">fa fa-envelope</v-icon>
-                info@example.com
-              </div>
-              <div>
-                <v-icon size="18px" class="mr-3">fa fa-phone</v-icon>
-                + 01 234 567 88
-              </div>
-              <div>
-                <v-icon size="18px" class="mr-3">fa fa-print</v-icon>
-                + 01 234 567 89
-              </div>
-            </v-flex>
-          </v-layout>
-        </v-card-text>
+      <v-flex xs12>
         <v-card-actions class="grey lighten-2 justify-center">
-          &copy;2018 — <strong>Vuetify</strong>
+          &copy;2018 — <strong>TF UAJY</strong>
         </v-card-actions>
-      </v-card>
+      </v-flex>
     </v-footer>
   </div>
 </template>

@@ -1,8 +1,7 @@
 <template>
   <v-layout row wrap justify-space-around>
     <v-flex xs6>
-      <v-card tile flat color="white">
-        <v-form @submit.prevent="submit">
+      <v-card tile flat color="blue lighten-5">
           <div>
             <v-layout row wrap justify-space-around>
               <v-flex xs12>
@@ -53,12 +52,11 @@
               </v-flex>
               <v-flex xs2>
                 <v-card tile flat>
-                    <v-btn color="blue lighten-1" type="submit" @click="submit()"><b>Masuk</b></v-btn>
+                    <v-btn color="blue lighten-1" @click="submit()"><b>Masuk</b></v-btn>
                 </v-card>
               </v-flex>
             </v-layout>
         </div>
-        </v-form>
       </v-card>
     </v-flex>
   </v-layout>
@@ -80,16 +78,32 @@
     </v-container> -->
 </template>
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
       email: null,
-      password: null
+      password: null,
+      account: []
     }
   },
   methods: {
-    submit () {
-      console.log(this.email + this.password)
+    submit: function () {
+     const URL = '/api/login'
+        const argument = {
+          email: this.email,
+          password: this.password
+        }
+        axios.post(URL, argument)
+          .then(response => {
+            this.account = response.data
+            
+            alert(this.account.name)
+          })
+          .catch(error => {
+            alert(error)
+          })
+      // alert(this.account)
     }
   }
 }

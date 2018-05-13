@@ -3,7 +3,7 @@
     <app-toolbar></app-toolbar>
       <router-view/>
       <br>
-    <!-- <app-footer style="position: absolute;z-index:-1"></app-footer> -->
+    <app-footer style="position: absolute;z-index:-1"></app-footer>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #e6eaed!important;
+  background-color: #ffffff!important;
   color: #434343
 }
   a:link {
