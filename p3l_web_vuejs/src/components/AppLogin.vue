@@ -47,7 +47,7 @@
               </v-flex>
               <v-flex xs2>
                 <v-card tile flat>
-                    <router-link to="/detail/roomTypeName">
+                    <router-link to="/forget-password">
                     <a>Lupa Password?</a>
                     </router-link>
                 </v-card>
@@ -73,22 +73,6 @@
       </v-card>
     </v-flex>
   </v-layout>
-    <!-- <v-container>
-        <v-form @submit.prevent="submit">
-            <v-text-field
-            label="E-mail"
-            v-model="email"
-            required
-            ></v-text-field>
-            <v-text-field
-            label="Password"
-            v-model="password"
-            type="password"
-            required
-            ></v-text-field>
-            <v-btn color="green" type="submit">Submit</v-btn>
-        </v-form>
-    </v-container> -->
 </template>
 <script>
 import axios from 'axios'
@@ -107,16 +91,25 @@ export default {
           email: this.email,
           password: this.password
         }
-        axios.post(URL, argument)
-          .then(response => {
-            this.account = response.data
-            
-            alert(this.account.name)
-          })
-          .catch(error => {
-            alert(error)
-          })
-      // alert(this.account)
+        if (this.email == null || this.password == null) {
+         alert("Isi email dan password !")
+        }
+        else {
+          axios.post(URL, argument)
+            .then(response => {
+              this.account = response.data
+              if (this.account.email == this.email) {
+                alert("Login Berhasil !")
+                sessionStorage.setItem("email", this.email);
+                this.$router.push('/search')
+              }else {
+                alert("Email atau password salah!")
+              }
+            })
+            .catch(error => {
+              alert(error)
+            })
+        }
     }
   }
 }
